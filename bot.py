@@ -24,7 +24,7 @@ async def get_video_note(message: types.Message):
     keyboard.add(button)
 
     # Вычисляем время следующей отправки сообщения (в данном примере - через сутки)
-    next_time = now + timedelta(seconds=5)
+    next_time = now + timedelta(days=1)
     print(next_time)
 
     # Отправляем сообщение с кнопкой
