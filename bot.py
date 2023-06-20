@@ -6,7 +6,7 @@ from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
 from rnd import get_rnd_message
 
-TOKEN = '5689961299:AAF_cXmUhz-JtWuyF8n8xZzL_kJaNUVFv_4'
+TOKEN = 'ваш_токен'
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
