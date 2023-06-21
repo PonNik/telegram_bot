@@ -4,7 +4,8 @@ from aiogram.utils import executor
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
-from rnd import get_rnd_message, hello_msg
+from rnd import get_rnd_message, hello_msg, msg_list_vst
+import time
 
 TOKEN = '5689961299:AAF_cXmUhz-JtWuyF8n8xZzL_kJaNUVFv_4'
 
@@ -52,6 +53,15 @@ async def get_video(message: types.Message):
 async def not_bot(message: types.Message):
     if message.text == "❗️❗️Я НЕ БОТ❗️❗️":
         await bot.send_message(message.chat.id, "✅СПАСИБО! ПОДТВЕРЖДЕНИЕ ПОЛУЧЕНО✅")
+        
+        for msg in msg_list_vst:
+            keyboard = types.InlineKeyboardMarkup()
+            button = types.InlineKeyboardButton(text=msg['btn_text'], url=msg['url'])
+            keyboard.add(button)
+
+            # Отправляем сообщение с кнопкой
+            await bot.send_message(message.chat.id, text=msg["message"], reply_markup=keyboard)
+            time.sleep(10)
         await get_video_note(message)
 
 if __name__ == '__main__':
