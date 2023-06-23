@@ -4,12 +4,11 @@ from aiogram.utils import executor
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
-from telegram import ChatJoinRequest
 from rnd import get_rnd_message, hello_msg, msg_list_vst
 import time
 
 
-TOKEN = '5993726049:AAEqp-p-S1FdWpjexzjNsq0EE9k7ORtwJo4'
+TOKEN = '6271039152:AAG6Va9SDCKXVitD-7lPxr7__nmgzqzrSqo'
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
@@ -31,7 +30,6 @@ async def get_video(update: types.ChatJoinRequest):
 
 @dp.message_handler(content_types=['text'])
 async def not_bot(message: types.Message):
-    print("dffg")
     if message.text == "❗️❗️Я НЕ БОТ❗️❗️":
         await bot.send_message(message.from_user.id, "✅СПАСИБО! ПОДТВЕРЖДЕНИЕ ПОЛУЧЕНО✅")
 
